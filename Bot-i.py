@@ -27,7 +27,10 @@ HRU = {'tulskaya_oblast':'Тула',
           'nizhegorodskaya_oblast':'Н.Новгород',
           'ryazanskaya_oblast':'Рязань'}
 
-conn = psycopg2.connect(database="d6a5gb4skkllep", user=config['DEFAULT']['username'], password=config['DEFAULT']['password'], host = "ec2-34-198-243-120.compute-1.amazonaws.com", port = "5432")
+conn = psycopg2.connect(database=config['DEFAULT']['database'],
+                        user=config['DEFAULT']['username'],
+                        password=config['DEFAULT']['password'],
+                        host=config['DEFAULT']['host'], port = "5432")
 mydb = conn.cursor()
 
 def comtrance():
